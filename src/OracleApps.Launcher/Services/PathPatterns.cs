@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace OracleApps.Launcher.Services;
 
 /// <summary>Expands configured paths: environment variables plus <c>*</c>/<c>?</c> wildcards per segment.</summary>
