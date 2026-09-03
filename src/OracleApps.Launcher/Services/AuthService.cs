@@ -24,8 +24,6 @@ public sealed class AuthService
     /// <summary>Supplies the window handle the Microsoft sign-in dialog is parented to.</summary>
     public Func<IntPtr>? ParentWindowProvider { get; set; }
 
-    public bool IsConfigured => _options.IsConfigured;
-
     /// <summary>Signs in without any UI, using the cached account or the Windows account.</summary>
     /// <returns>Null when the user has to sign in interactively.</returns>
     public async Task<SignInResult?> TrySignInSilentlyAsync(CancellationToken cancellationToken = default)
@@ -55,13 +53,10 @@ public sealed class AuthService
 
             return ToSignInResult(result);
         }
-        catch (MsalUiRequiredException)
+        catch (MsalException)
         {
-            return null;
-        }
-        catch (MsalClientException)
-        {
-            // No usable account (for instance the broker is unavailable on this machine).
+            // Interaction is required, or there is no usable account (for instance because the
+            // broker is unavailable on this machine). Either way: fall back to the sign-in card.
             return null;
         }
     }

@@ -3,7 +3,6 @@
                     xmlns:converters="clr-namespace:OracleApps.Launcher.Converters">
 
     <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
-    <converters:InverseBooleanToVisibilityConverter x:Key="InverseBoolToVisibility" />
     <converters:NullToVisibilityConverter x:Key="NotNullToVisibility" />
     <converters:NullToVisibilityConverter x:Key="NullToVisibility" Invert="True" />
 
