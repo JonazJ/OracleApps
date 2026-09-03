@@ -1,0 +1,74 @@
+{
+  "title": "Oracle Apps",
+  "subtitle": "Everything in one window instead of six icons in the taskbar",
+  "backgroundImage": "",
+
+  "apps": [
+    {
+      "id": "sql-developer",
+      "name": "SQL Developer",
+      "description": "Browse schemas, run queries and manage database connections.",
+      "accent": "#2E7DD1",
+      "detect": {
+        "paths": [
+          "%ProgramFiles%\\sqldeveloper\\sqldeveloper.exe",
+          "%LOCALAPPDATA%\\Programs\\sqldeveloper\\sqldeveloper.exe",
+          "C:\\Oracle\\sqldeveloper*\\sqldeveloper.exe",
+          "C:\\sqldeveloper\\sqldeveloper.exe"
+        ],
+        "executables": [ "sqldeveloper.exe" ]
+      },
+      "launch": { "kind": "detected" },
+      "installUrl": "https://www.oracle.com/database/sqldeveloper/technologies/download/"
+    },
+    {
+      "id": "virtualbox",
+      "name": "VirtualBox",
+      "description": "Start the virtual machines you use for test environments.",
+      "accent": "#1B4F86",
+      "detect": {
+        "registryValues": [
+          { "key": "HKLM\\SOFTWARE\\Oracle\\VirtualBox", "name": "InstallDir", "append": "VirtualBox.exe" }
+        ],
+        "paths": [ "%ProgramFiles%\\Oracle\\VirtualBox\\VirtualBox.exe" ]
+      },
+      "launch": { "kind": "detected" },
+      "installUrl": "https://www.virtualbox.org/wiki/Downloads"
+    },
+    {
+      "id": "primavera-p6",
+      "name": "Primavera P6",
+      "description": "Project planning and scheduling on the desktop client.",
+      "accent": "#6B46C1",
+      "detect": {
+        "paths": [
+          "%ProgramFiles(x86)%\\Oracle\\Primavera P6\\P6 Professional\\*\\PM.exe",
+          "%ProgramFiles%\\Oracle\\Primavera P6\\P6 Professional\\*\\PM.exe"
+        ]
+      },
+      "launch": { "kind": "detected" },
+      "installUrl": "https://www.oracle.com/construction-engineering/primavera-p6/"
+    },
+    {
+      "id": "ebs",
+      "name": "E-Business Suite",
+      "description": "Finance, purchasing and HR in the browser.",
+      "accent": "#C74634",
+      "launch": { "kind": "uri", "target": "https://ebs.example.com" }
+    },
+    {
+      "id": "apex",
+      "name": "Application Express",
+      "description": "The low-code apps your team builds and uses every day.",
+      "accent": "#E0651F",
+      "launch": { "kind": "uri", "target": "https://apex.example.com" }
+    },
+    {
+      "id": "analytics",
+      "name": "Oracle Analytics",
+      "description": "Dashboards and reports for the numbers behind the work.",
+      "accent": "#2E9E6B",
+      "launch": { "kind": "uri", "target": "https://analytics.example.com" }
+    }
+  ]
+}
